@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>sixteen, bebe ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --navy: #102a43;
+  --blue: #1f5f91;
+  --sky: #dcefff;
+  --mist: #f4f9fd;
+  --white: #ffffff;
+  --ink: #263746;
+  --muted: #668096;
+  --line: #c9ddea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+
+  background:
+    radial-gradient(circle at 10% 10%, #dcefff 0, transparent 28%),
+    radial-gradient(circle at 90% 20%, #e5f4fb 0, transparent 25%),
+    linear-gradient(145deg, #f8fcff, #eaf5fb 55%, #f7fbfe);
+
+  overflow-x: hidden;
+}
+
+/* floating hearts */
+
+.floating {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating span {
+  position: absolute;
+  bottom: -30px;
+  color: rgba(61,131,181,.18);
+  font-size: 20px;
+  animation: float 9s linear infinite;
+}
+
+.floating span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating span:nth-child(2) {
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.floating span:nth-child(3) {
+  left: 55%;
+  animation-delay: 4s;
+}
+
+.floating span:nth-child(4) {
+  left: 78%;
+  animation-delay: 1s;
+}
+
+.floating span:nth-child(5) {
+  left: 92%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+
+  width: min(850px, 92%);
+  margin: auto;
+
+  padding: 50px 0 70px;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 30px 15px 50px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 15px 0 10px;
+
+  color: var(--navy);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(60px, 12vw, 100px);
+  line-height: .85;
+
+  font-weight: 600;
+}
+
+.subtitle {
+  max-width: 570px;
+  margin: auto;
+
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.age {
+  display: inline-block;
+
+  margin-top: 22px;
+  padding: 7px 16px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.7);
+
+  color: var(--blue);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* ENVELOPE */
+
+.envelope-wrapper {
+  width: 270px;
+  height: 180px;
+
+  margin: 38px auto 22px;
+
+  perspective: 1000px;
+}
+
+.envelope {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.envelope-body {
+  position: absolute;
+
+  inset: 20px 0 0;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    145deg,
+    #9bc9e7,
+    #6fa9cf
+  );
+
+  box-shadow:
+    0 25px 50px rgba(16,42,67,.18);
+
+  overflow: hidden;
+}
+
+.envelope-body::before,
+.envelope-body::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border-style: solid;
+}
+
+.envelope-body::before {
+  left: 0;
+
+  border-width: 0 135px 90px 0;
+
+  border-color:
+    transparent
+    rgba(45,112,157,.42)
+    transparent
+    transparent;
+}
+
+.envelope-body::after {
+  right: 0;
+
+  border-width: 90px 135px 0 0;
+
+  border-color:
+    rgba(214,237,249,.7)
+    transparent
+    transparent
+    transparent;
+}
+
+.flap {
+  position: absolute;
+
+  top: 20px;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  border-left: 135px solid transparent;
+  border-right: 135px solid transparent;
+  border-top: 88px solid #b8dcef;
+
+  transform-origin: top;
+
+  transition: .7s ease;
+
+  z-index: 4;
+}
+
+.note {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 35px;
+  right: 35px;
+
+  top: 45px;
+
+  height: 95px;
+
+  border-radius: 9px;
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--blue);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  font-style: italic;
+
+  box-shadow: 0 7px 20px rgba(16,42,67,.13);
+
+  transition: .7s ease;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .note {
+  transform: translateY(-65px);
+}
+
+/* BUTTON */
+
+.open-button {
+  border: none;
+
+  padding: 13px 24px;
+
+  border-radius: 999px;
+
+  background: var(--navy);
+  color: white;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(16,42,67,.2);
+
+  transition: .2s;
+}
+
+.open-button:hover {
+  transform: translateY(-2px);
+  background: var(--blue);
+}
+
+/* LETTER */
+
+.letter {
+  position: relative;
+
+  padding: clamp(25px, 5vw, 55px);
+
+  border:
+    1px solid var(--line);
+
+  border-radius: 25px;
+
+  background:
+    rgba(255,255,255,.9);
+
+  box-shadow:
+    0 20px 60px rgba(16,42,67,.1);
+
+  backdrop-filter: blur(10px);
+}
+
+.letter.hidden {
+  display: none;
+}
+
+.letter::before {
+  content: "";
+
+  position: absolute;
+
+  top: 22px;
+  bottom: 22px;
+  left: 18px;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      transparent,
+      var(--line),
+      transparent
+    );
+}
+
+.salutation {
+  margin: 0 0 25px 8px;
+
+  color: var(--navy);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 29px;
+
+  font-weight: 600;
+}
+
+.letter p {
+  margin:
+    0
+    0
+    22px
+    8px;
+
+  color: #304657;
+
+  font-size: 15px;
+  line-height: 2;
+}
+
+/* these are the deep / poetic lines */
+
+.deep {
+  padding:
+    13px
+    0
+    13px
+    20px;
+
+  border-left:
+    2px solid #8dbbd7;
+
+  color: var(--navy) !important;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 23px !important;
+
+  font-style: italic;
+
+  line-height: 1.65 !important;
+}
+
+/* softer poetic lines */
+
+.poetic {
+  color: var(--blue) !important;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 22px !important;
+
+  font-style: italic;
+
+  line-height: 1.65 !important;
+}
+
+.bold {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* CARDS */
+
+.section {
+  margin-top: 30px;
+}
+
+.section-title {
+  margin-bottom: 18px;
+
+  text-align: center;
+
+  color: var(--navy);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 31px;
+  font-style: italic;
+}
+
+.cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 13px;
+}
+
+.card {
+  padding: 20px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: 17px;
+
+  background:
+    rgba(255,255,255,.75);
+
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 28px rgba(16,42,67,.09);
+}
+
+.card-title {
+  color: var(--blue);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.hint {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.secret {
+  display: none;
+
+  margin-top: 12px;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.card.revealed .secret {
+  display: block;
+}
+
+/* FINAL */
+
+.final {
+  text-align: center;
+
+  margin-top: 50px;
+  padding: 35px 20px;
+}
+
+.final-big {
+  margin: 0;
+
+  color: var(--navy);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: clamp(32px, 7vw, 52px);
+
+  font-style: italic;
+}
+
+.final-small {
+  color: var(--muted);
+}
+
+.heart {
+  display: block;
+
+  margin: 20px auto 8px;
+
+  border: none;
+  background: transparent;
+
+  color: var(--blue);
+
+  font-size: 55px;
+
+  cursor: pointer;
+}
+
+.heart.pop {
+  animation: pop .35s ease;
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+.count {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer {
+  margin-top: 30px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media(max-width:650px) {
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .letter::before {
+    display: none;
+  }
+
+  .letter p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- floating blue hearts -->
+
+<div class="floating">
+  <span>♡</span>
+  <span>♡</span>
+  <span>♡</span>
+  <span>♡</span>
+  <span>♡</span>
+</div>
+
+
+<div class="container">
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="hero">
+
+  <div class="eyebrow">
+    a little letter for you
+  </div>
+
+  <h1>
+    sixteen.
+  </h1>
+
+  <p class="subtitle">
+    for the boy whose existence became one of the little things
+    i’m endlessly grateful for.
+  </p>
+
+  <div class="age">
+    16TH BIRTHDAY · ♡
+  </div>
+
+
+  <!-- envelope -->
+
+  <div class="envelope-wrapper">
+
+    <button
+      class="envelope"
+      id="envelope"
+    >
+
+      <div class="envelope-body"></div>
+
+      <div class="note">
+        for my bebe ♡
+      </div>
+
+      <div class="flap"></div>
+
+    </button>
+
+  </div>
+
+
+  <button
+    class="open-button"
+    id="openButton"
+  >
+    open your letter
+  </button>
+
+</section>
+
+
+<!-- =========================
+     LETTER
+========================= -->
+
+<section
+  class="letter hidden"
+  id="letter"
+>
+
+<p class="salutation">
+  happiest 16th, bebe ko!
+</p>
+
+
+<p>
+now that you’re entering another year of your life, i hope today reminds you
+of how loved and appreciated you are—not just by me, but by everyone lucky
+enough to have you in their lives.
+</p>
+
+
+<p>
+i hope you remember that you don’t have to have everything figured out yet.
+you’re still growing, still learning, still becoming. there will be days when
+you feel like you’re doing so well, and there will be days when you question
+yourself and wonder if you’re enough. when those days come, i hope you remember
+how much you’ve already grown and how many people are quietly rooting for you.
+so please be gentle with yourself, okay? you deserve the same kindness that you
+so naturally give to the people you care about.
+</p>
+
+
+<p>
+and if there’s one thing i want you to know today, it’s that i’m so, so proud
+of you. not only for the things you accomplish, but for the person you are when
+nobody is watching. for the little ways you care, the things you do without
+expecting anything in return, the way you try even when you’re tired, and even
+the parts of you that you sometimes think aren’t worth loving. i hope you learn
+to see yourself through the eyes of the people who love you, because maybe then
+you’d understand just how precious you are.
+</p>
+
+
+<p>
+bebe, sana sa pagpasok mo sa panibagong taon ng buhay mo, hindi mo makalimutang
+pangarapin yung mga bagay na nagpapasaya sa’yo. ‘wag mong madaliin yung sarili
+mo. may sarili kang oras, sariling daan, at sariling kuwento na sinusulat.
+hindi mo kailangang maging katulad ng iba para maging sapat.
+</p>
+
+
+<p class="deep">
+and if life ever becomes too loud, i hope you remember that there are people
+who would gladly sit beside you in the quiet.
+</p>
+
+
+<p>
+i hope you know that you never have to pretend to be okay just because you
+think you have to be strong all the time. you can rest. you can be unsure.
+you can have bad days. you can take your time.
+</p>
+
+
+<p class="deep">
+hindi nababawasan ung halaga mo just because sa mga araw na hindi mo kayang
+maging pinakamahusay na version of yourself.
+</p>
+
+
+<p>
+i’m also really thankful that somewhere along all the twists and turns of life,
+our paths crossed. out of all the people we could have met, somehow, i met you.
+and out of all the little moments that could have meant nothing, somehow, they
+became memories i hold so close to my heart.
+</p>
+
+
+<p class="deep">
+hindi ko man maipangako na magiging madali ang lahat ng darating, maipapangako
+ko na pahahalagahan ko ang bawat sandaling ipinagkakatiwala mo sa’kin.
+</p>
+
+
+<p>
+i want to know the versions of you that you haven’t met yet. i want to hear
+about the dreams you’ll have someday, the things you’ll discover, the places
+you’ll go, and the person you’ll eventually become.
+</p>
+
+
+<p>
+i hope sixteen is kind to you. i hope it gives you reasons to laugh until your
+stomach hurts, moments you’ll remember years from now, people who make you feel
+understood, and experiences that help you discover more of yourself. i hope you
+find courage when things get difficult and peace when everything feels
+overwhelming. and whenever you accomplish something, no matter how small,
+i hope you let yourself be proud.
+</p>
+
+
+<p class="deep">
+and if dumating man ung mga araw na makalimutan mong mahalin ung sarili mo,
+ipapaalala ko sa’yo. kung posible, ipapahiram ko pa sa’yo ‘yung dalawang mata
+ko para malaman mo kung paano kita nakikita.
+</p>
+
+
+<p>
+i’ll always be grateful for your existence, bebe. not because of what you can
+give me, not because of what you do for me, but simply because you are you.
+your existence alone is something worth celebrating today.
+</p>
+
+
+<p>
+so please enjoy your day,
+<span class="bold">pretty boy ! :P</span>
+eat lots, laugh lots, let yourself be spoiled a little, and don’t forget
+to make a wish whoot whoot.
+</p>
+
+
+<p class="poetic">
+sixteen looks like the beginning of so many things—
+i hope you welcome them with an open heart.
+</p>
+
+
+<p>
+and wherever this year takes you, i hope you never forget:
+</p>
+
+
+<p class="deep">
+mahal kita hindi lamang sa mga araw na madali kang mahalin, kundi pati sa mga
+araw na ikaw mismo ay nahihirapang intindihin ang sarili mo.
+</p>
+
+
+<p>
+i love you in the ordinary moments, in the silly ones, in the silent ones,
+and in the moments where words aren’t enough to explain what we feel.
+i love knowing you, learning you, and discovering all the little pieces
+that make you who you are.
+</p>
+
+
+<p class="poetic">
+happy birthday, bebe ko. i love you more than these words could ever
+properly hold :’)
+</p>
+
+</section>
+
+
+<!-- =========================
+     INTERACTIVE CARDS
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+a few things i hope you remember ♡
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="card-title">
+for the days you doubt
+</div>
+
+<span class="hint">
+tap to reveal
+</span>
+
+<div class="secret">
+you are still worthy of kindness on the days when you don't feel like
+your best self. growing doesn't mean having everything figured out.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-title">
+for your dreams
+</div>
+
+<span class="hint">
+tap to reveal
+</span>
+
+<div class="secret">
+take your time. your path doesn't have to look like anyone else's.
+there is no deadline for becoming the person you want to be.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-title">
+for this year
+</div>
+
+<span class="hint">
+tap to reveal
+</span>
+
+<div class="secret">
+laugh a lot, make memories, try new things, and let yourself be proud
+of every little victory. sixteen is only the beginning.
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+<p class="final-big">
+“i’m glad you exist.”
+</p>
+
+<p class="final-small">
+and i hope you never forget that. ♡
+</p>
+
+
+<button
+  class="heart"
+  id="heart"
+>
+♡
+</button>
+
+<div
+  class="count"
+  id="count"
+>
+send him a little heart · 0
+</div>
+
+</section>
+
+
+<footer>
+made with love, blue ink, and probably too many feelings ♡
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* OPEN LETTER */
+
+const envelope =
+document.getElementById("envelope");
+
+const openButton =
+document.getElementById("openButton");
+
+const letter =
+document.getElementById("letter");
+
+
+function openLetter(){
+
+  envelope.classList.add("open");
+
+  letter.classList.remove("hidden");
+
+  openButton.textContent =
+    "opened with love ♡";
+
+  openButton.disabled = true;
+
+  setTimeout(() => {
+
+    letter.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  }, 350);
+
+}
+
+
+envelope.addEventListener(
+  "click",
+  openLetter
+);
+
+openButton.addEventListener(
+  "click",
+  openLetter
+);
+
+
+/* REVEAL CARDS */
+
+document
+.querySelectorAll(".card")
+.forEach(card => {
+
+  card.addEventListener(
+    "click",
+    () => {
+
+      card.classList.toggle(
+        "revealed"
+      );
+
+    }
+  );
+
+});
+
+
+/* HEART COUNTER */
+
+const heart =
+document.getElementById("heart");
+
+const count =
+document.getElementById("count");
+
+let hearts = 0;
+
+
+heart.addEventListener(
+  "click",
+  () => {
+
+    hearts++;
+
+    heart.classList.remove("pop");
+
+    void heart.offsetWidth;
+
+    heart.classList.add("pop");
+
+    heart.textContent = "♥";
+
+    count.textContent =
+      `you sent ${hearts} little ${
+        hearts === 1 ? "heart" : "hearts"
+      } ♡`;
+
+    setTimeout(() => {
+
+      heart.textContent = "♡";
+
+    }, 350);
+
+  }
+);
+
+</script>
+
+</body>
+</html>
+'''
+
+display(HTML(html))
